@@ -1,0 +1,10 @@
+---
+
+- hosts: linux-workstation
+  become: false
+
+  tasks:
+    - firefox_addon: url=https://addons.mozilla.org/firefox/downloads/file/495444/lastpass_password_manager-4.1.29a-an+fx.xpi
+  
+  roles:
+    - alzadude.firefox-addon
