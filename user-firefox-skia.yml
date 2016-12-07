@@ -1,0 +1,15 @@
+---
+
+# https://fedoramagazine.org/new-firefox-49-features-fedora/
+
+- hosts: linux-workstation
+  become: false
+
+  vars:
+    firefox:
+      prefs:
+        - name: gfx.content.azure.backends
+          value: skia
+
+  roles:
+    - alzadude.firefox
