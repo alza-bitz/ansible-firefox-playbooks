@@ -54,11 +54,11 @@
       - copy: src=install-rdf-target-application.xsl dest=/tmp/ansible-firefox-playbooks/
         changed_when: false
       - command: 
-          xsltproc --stringparam maxVersion 53.0a1 --output /tmp/ansible-firefox-playbooks/install.rdf 
+          xsltproc --stringparam maxVersion 54.0a1 --output /tmp/ansible-firefox-playbooks/install.rdf 
           /tmp/ansible-firefox-playbooks/install-rdf-target-application.xsl
           {{ adwaita_addon_dir }}/install.rdf
         changed_when: false
-      - name: Fix adwaita theme compatibility for Firefox 52
+      - name: Fix adwaita theme compatibility for Firefox 53
         copy:
           src: /tmp/ansible-firefox-playbooks/install.rdf
           dest: '{{ adwaita_addon_dir }}/install.rdf'
